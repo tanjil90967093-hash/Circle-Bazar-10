@@ -12,7 +12,7 @@ import com.example.ui.theme.MyApplicationTheme
 @Composable
 fun CircleBazarApp() {
     MyApplicationTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
+        Surface(modifier = Modifier.fillMaxSize(), color = androidx.compose.ui.graphics.Color.White) {
             val navController = rememberNavController()
             NavHost(navController = navController, startDestination = "main") {
                 composable("main") {

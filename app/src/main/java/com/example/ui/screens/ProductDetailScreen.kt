@@ -39,6 +39,7 @@ fun ProductDetailScreen(productId: String, onNavigateBack: () -> Unit) {
     var selectedSize by remember { mutableStateOf(1) }
 
     Scaffold(
+        containerColor = Color.White,
         bottomBar = {
             ProductBottomBar()
         }
@@ -47,7 +48,7 @@ fun ProductDetailScreen(productId: String, onNavigateBack: () -> Unit) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .background(MaterialTheme.colorScheme.background)
+                .background(Color.White)
                 .verticalScroll(scrollState)
         ) {
             ProductImageGallery(onNavigateBack = onNavigateBack)
@@ -240,7 +241,7 @@ fun ProductImageGallery(onNavigateBack: () -> Unit) {
 fun ProductBottomBar() {
     Surface(
         modifier = Modifier.fillMaxWidth().shadow(16.dp),
-        color = MaterialTheme.colorScheme.surface
+        color = Color.White
     ) {
         Row(
             modifier = Modifier

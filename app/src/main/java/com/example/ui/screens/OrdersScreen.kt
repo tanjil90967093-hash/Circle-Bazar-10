@@ -21,7 +21,7 @@ fun OrdersScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .background(androidx.compose.ui.graphics.Color.White)
     ) {
         // Header
         Box(

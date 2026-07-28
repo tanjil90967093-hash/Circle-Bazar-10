@@ -33,7 +33,7 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .background(androidx.compose.ui.graphics.Color.White)
     ) {
         item {
             // Profile Header

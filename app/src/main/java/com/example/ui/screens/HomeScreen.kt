@@ -52,7 +52,7 @@ import com.example.R
 fun HomeScreen(modifier: Modifier = Modifier, onNavigateToSearch: () -> Unit, onNavigateToProduct: (String) -> Unit) {
     val scrollState = rememberScrollState()
     
-    Column(modifier = modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
+    Column(modifier = modifier.fillMaxSize().background(Color.White)) {
         HomeHeader(onNavigateToSearch = onNavigateToSearch)
         
         Column(modifier = Modifier.verticalScroll(scrollState)) {
@@ -363,10 +363,17 @@ fun CategorySection() {
                             .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(category.take(1), fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary, fontSize = 24.sp)
+                        Text(category.take(1), fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary, fontSize = 18.sp)
                     }
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = category, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(
+                        text = category, 
+                        fontSize = 11.sp, 
+                        maxLines = 2, 
+                        overflow = TextOverflow.Ellipsis,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                        lineHeight = 14.sp
+                    )
                 }
             }
         }
@@ -594,9 +601,9 @@ fun CircleDealProductCard(
                         .align(Alignment.TopStart)
                         .clip(RoundedCornerShape(topStart = 6.dp, bottomEnd = 4.dp, topEnd = 2.dp, bottomStart = 2.dp))
                         .background(Color(0xFFE53935))
-                        .padding(horizontal = 3.dp, vertical = 1.dp)
+                        .padding(horizontal = 4.dp, vertical = 2.dp)
                 ) {
-                    Text(text = discount, color = Color.White, fontSize = 7.sp, fontWeight = FontWeight.Bold)
+                    Text(text = discount, color = Color.White, fontSize = 9.sp, fontWeight = FontWeight.Bold)
                 }
                 
                 // Favorite Icon
@@ -604,7 +611,7 @@ fun CircleDealProductCard(
                     Icons.Default.FavoriteBorder, 
                     contentDescription = "Wishlist", 
                     tint = Color.Gray, 
-                    modifier = Modifier.align(Alignment.TopEnd).size(12.dp)
+                    modifier = Modifier.align(Alignment.TopEnd).size(16.dp)
                 )
             }
             
@@ -617,32 +624,32 @@ fun CircleDealProductCard(
                     modifier = Modifier
                         .clip(RoundedCornerShape(4.dp))
                         .background(Color(0xFFE8F5E9))
-                        .padding(horizontal = 3.dp, vertical = 1.dp)
+                        .padding(horizontal = 4.dp, vertical = 2.dp)
                 ) {
-                    Text("CIRCLE DEALS", color = MaterialTheme.colorScheme.primary, fontSize = 6.sp, fontWeight = FontWeight.ExtraBold)
+                    Text("CIRCLE DEALS", color = MaterialTheme.colorScheme.primary, fontSize = 8.sp, fontWeight = FontWeight.ExtraBold)
                 }
                 
                 Text(
                     text = title,
-                    fontSize = 9.sp,
+                    fontSize = 11.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.Black,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
-                    lineHeight = 10.sp
+                    lineHeight = 14.sp
                 )
                 
                 Row(verticalAlignment = Alignment.Bottom, modifier = Modifier.padding(top = 1.dp)) {
                     Text(
                         text = price,
-                        fontSize = 10.sp,
+                        fontSize = 12.sp,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary
                     )
-                    Spacer(modifier = Modifier.width(2.dp))
+                    Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         text = oldPrice,
-                        fontSize = 7.sp,
+                        fontSize = 10.sp,
                         color = Color.Gray,
                         textDecoration = TextDecoration.LineThrough,
                         modifier = Modifier.padding(bottom = 1.dp)
@@ -660,9 +667,9 @@ fun CircleDealProductCard(
                 Text(
                     text = leftText,
                     color = Color(0xFFE53935), // Red
-                    fontSize = 7.sp,
+                    fontSize = 10.sp,
                     fontWeight = FontWeight.Medium,
-                    modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 1.dp)
+                    modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 2.dp)
                 )
             }
         }

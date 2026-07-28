@@ -19,6 +19,7 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.ui.graphics.Color
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -36,8 +37,11 @@ fun MainScreen(onNavigateToSearch: () -> Unit, onNavigateToProduct: (String) -> 
     val unselectedIcons = listOf(Icons.Outlined.Home, Icons.AutoMirrored.Outlined.List, Icons.Outlined.ShoppingCart, Icons.Outlined.ShoppingBag, Icons.Outlined.Person)
 
     Scaffold(
+        containerColor = Color.White,
         bottomBar = {
-            NavigationBar {
+            NavigationBar(
+                containerColor = Color.White
+            ) {
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = {
