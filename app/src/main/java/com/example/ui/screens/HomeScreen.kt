@@ -349,13 +349,13 @@ fun CategorySection() {
         
         LazyVerticalGrid(
             columns = GridCells.Fixed(4),
-            modifier = Modifier.height(180.dp),
+            modifier = Modifier.height(220.dp),
             userScrollEnabled = false,
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(categories) { category ->
-                Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.width(64.dp)) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.width(72.dp)) {
                     Box(
                         modifier = Modifier
                             .size(56.dp)
